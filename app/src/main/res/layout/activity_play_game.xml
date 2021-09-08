@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/playGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".PlayGame">
+
+
+        <TextView
+            android:id="@+id/minesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="monospace"
+            android:text="Mines"
+            android:textColor="#615E5E"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/restartButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/restartButton"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="50dp"
+            android:layout_height="52dp"
+            app:icon="@drawable/restart"
+            app:layout_constraintBottom_toBottomOf="@+id/minesTextView"
+            app:layout_constraintEnd_toStartOf="@+id/flagButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/minesTextView" />
+
+        <ImageButton
+            android:id="@+id/flagButton"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            app:icon="@drawable/flag"
+            app:layout_constraintBottom_toBottomOf="@+id/restartButton"
+            app:layout_constraintEnd_toStartOf="@+id/timerTextView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/restartButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="Time"
+            android:textColor="#615E5E"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/flagButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/flagButton" />
+
+        <TextView
+            android:id="@+id/mineCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="10"
+            android:textColor="#615E5E"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/minesTextView"
+            app:layout_constraintStart_toStartOf="@+id/minesTextView"
+            app:layout_constraintTop_toBottomOf="@+id/minesTextView" />
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:textColor="#615E5E"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/timerTextView"
+            app:layout_constraintStart_toStartOf="@+id/timerTextView"
+            app:layout_constraintTop_toBottomOf="@+id/timerTextView" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mineCountTextView" />
+
+        <LinearLayout
+            android:id="@+id/board"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            tools:layout_editor_absoluteX="44dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
